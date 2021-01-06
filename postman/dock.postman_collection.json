@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "f631cbf2-0695-4c7e-96ae-afb4903fd140",
+		"name": "DOCK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pessoas",
+			"item": [
+				{
+					"name": "Consulta Pessoa por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/pessoa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pessoa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cria Pessoa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\":\"João da Silva\",\n    \"cpf\":\"789.417.257-65\",\n    \"data_nascimento\":\"1980-09-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contas",
+			"item": [
+				{
+					"name": "Cria Conta Pessoa Física Existente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_pessoa\":1,\n    \"saldo\":\"5500.50\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/conta/pf/existente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"conta",
+								"pf",
+								"existente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cria Conta Pessoa Física Nova",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\":\"Marcos da Silva\",\n    \"cpf\":\"582.741.963-89\",\n    \"data_nascimento\":\"1975-01-15\",\n    \"saldo\":\"3450.78\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/conta/pf/nova",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"conta",
+								"pf",
+								"nova"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bloquear Conta ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/conta/bloquear/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"conta",
+								"bloquear",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desbloquear Conta ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/conta/desbloquear/10000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"conta",
+								"desbloquear",
+								"10000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Conta Saldo por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/conta/saldo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"conta",
+								"saldo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transações",
+			"item": [
+				{
+					"name": "Cria Transacao: Deposito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_conta\":1,\n    \"valor\":300,\n    \"tipo\":\"deposito\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/transacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cria Transacao: Saque",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_conta\":1,\n    \"valor\":10,\n    \"tipo\":\"saque\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/transacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Extrato por ID da Conta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/transacao/extrato/conta/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transacao",
+								"extrato",
+								"conta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Extrato por ID da Conta por Periodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/transacao/extrato/conta/1/periodo/2021-01-04/2021-01-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"transacao",
+								"extrato",
+								"conta",
+								"1",
+								"periodo",
+								"2021-01-04",
+								"2021-01-1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
