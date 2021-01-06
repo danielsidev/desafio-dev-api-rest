@@ -118,6 +118,8 @@ Esta operação , com base em um id de pessoa existente, mas que ainda não poss
 |---|---| 
 |Content-Type|application/json| 
 |Rota|/conta/pf/existente|
+
+
 Exemplo de body:
 ```
 body
@@ -566,7 +568,7 @@ Essa operação realiza a consulta do extrato da conta, informando o id da conta
 |GET: | /transacao/extrato/conta/{id}|
 |PARAM| id: number|
 
-Examplo: GET http://localhost:5000/transacao/extrato/conta/1
+Exemplo: GET http://localhost:5000/transacao/extrato/conta/1
 |Response JSON| Status 200| 
 |---|---|  
 ```
