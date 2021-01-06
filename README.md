@@ -92,7 +92,7 @@ $ npm run prod
  ----
  >No ambiente de DEV, o gulp ficará assistindo os arquivos .ts, logo a cada alteração em um arquivo .ts, dentro de 5 segundos, um novo arquivo .js será gerado ou atualizado.
  ----
- >No ambiente de PROD, o gulp gerará um única vez o diretório dist com a transpilação dos arquivos Typescript e acionará o node para levantar a aplicação apontando para o server na raiz do dist.
+ >No ambiente de PROD, o gulp gerará uma única vez o diretório dist com a transpilação dos arquivos Typescript e acionará o node para levantar a aplicação apontando para o server na raiz do dist.
  ---
  [índice&#8613;](#indice)
  ###  <a name="testes-manuais"><a/>Testes Manuais
@@ -181,7 +181,7 @@ body
 ```
 [índice&#8613;](#indice)
 #####  <a name="cria-conta-nova"><a/> Criar Conta com pessoa completamente nova
-Esta operação realiza cria uma nova pessoa e a partir do id dessa pessoa cria uma nova conta para a mesma.
+Esta operação realiza a criação de uma nova pessoa e a partir do id dessa pessoa cria uma nova conta para a mesma.
 
 ---
 
