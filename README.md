@@ -30,11 +30,22 @@ Requer [Node.js](https://nodejs.org/) v13+ , [Typescript](https://www.typescript
 
 [índice&#8613;](#indice)
 ### <a name="configuracao"><a/> Configuração
-Edite as variáveis de ambiente no arquivo .env na raiz do projeto para configurar o acesso ao banco de dados.
+Edite as variáveis de ambiente no arquivo **.env** na raiz do projeto para configurar o acesso ao banco de dados.
 Coloque os valores de acesso para um mysql local com o usuário, senha, nome do banco e host.
-Quando a migration for executada será criado um banco de teste:**dock_bank_test** pelo usuario da conexão, logo esse usuário deve possuir permissão para criar banco de dados.
+Quando a migration for executada será criado um banco de teste, **dock_bank_test**,  pelo usuario da conexão. Logo esse usuário deve possuir permissão para criar banco de dados.
+##### Observação: Criação de usuário no MySQL 8
+Se sua versão do MySQL for mais recente e houver porblemas de conexão, crie ou atualize o usuário de conexão conforme abaixo:
+```
+CREATE USER 'my_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my_password';
+--Ou
+ALTER USER 'my_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'my_password';
 
-Abra um terminal, na raiz do projeto e aloque as variáveis de ambiente, através no comando:
+GRANT ALL PRIVILEGES ON  database_name. * TO 'my_user'@'localhost';
+FLUSH PRIVILEGES;
+```
+---
+#### Variáveis de Ambiente
+Após editar o arquivo **.env**, abra um terminal, na raiz do projeto e aloque as variáveis de ambiente, através no comando:
 ```sh
 $ set -a; source .env; set +a
 ```
